@@ -4,7 +4,7 @@
   "description": "Rock, paper, scissor terminal game",
   "main": "dist/app.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config ./jest.config.mjs",
+    "test": "tsc && node --experimental-vm-modules node_modules/jest/bin/jest.js --config ./jest.config.mjs",
     "start": "tsc && node dist/app.js"
   },
   "author": "Calvin Li",
