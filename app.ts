@@ -1,32 +1,42 @@
-'use strict';
+'use strict'
+
 import createGame from './game.js';
+
 const game = createGame();
-let continueGame = true;
-let gameResult = game.endGame;
-let manualOrAuto = game.continueManual;
-while (continueGame) {
+
+let continueGame: boolean = true;
+let gameResult: number = game.endGame;
+let manualOrAuto: number = game.continueManual;
+
+while(continueGame) {
     try {
         gameResult = await game.runGame(manualOrAuto);
-        if (gameResult === game.continueManual
-            || gameResult === game.continueAuto) {
+
+        if(gameResult === game.continueManual
+        || gameResult === game.continueAuto) {
             continueGame = true;
+
             manualOrAuto = gameResult;
         }
-        else if (gameResult === game.endGame) {
+        else if(gameResult === game.endGame) {
             console.log(`Final scores\nYou: ${game.userScore}\nOpponent: ${game.computerScore}\n`);
+
             console.log("Thanks for playing!\n");
+
             continueGame = false;
         }
     }
-    catch (exception) {
+    catch(exception) {
         //log exception
-        if (process.env.NODE_ENV === 'development') {
+        if(process.env.NODE_ENV === 'development') {
             console.log(exception);
         }
         else {
             console.error("The game has encountered an error and must close\n");
         }
+
         continueGame = false;
     }
 }
+
 process.exit();
