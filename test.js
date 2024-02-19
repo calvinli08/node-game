@@ -1,4 +1,4 @@
-import createGame from './game.js';
+import createGame from './dist/game.js';
 
 const {chooseWinner, user, computer, tie, rock, paper, scissor} = createGame();
 
