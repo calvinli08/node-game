@@ -1,4 +1,3 @@
-import {setTimeout} from 'node:timers/promises';
 import select, {Separator} from '@inquirer/select';
 
 export default function() {
