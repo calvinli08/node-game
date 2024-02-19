@@ -19,6 +19,8 @@ while(continueGame) {
             manualOrAuto = gameResult;
         }
         else if(gameResult === game.endGame) {
+            console.clear();
+
             console.log(`Final scores\nYou: ${game.userScore}\nOpponent: ${game.computerScore}\n`);
 
             console.log("Thanks for playing!\n");
